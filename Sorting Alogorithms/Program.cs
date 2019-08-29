@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace Sorting_Alogorithms
+namespace Sorting_Algorithms
 {
     class Program
     {
         static void Main(string[] args)
         {
-            DataArray data = new DataArray(@"C:\Users\josep\source\repos\Sorting Alogorithms\Sorting Alogorithms\Data\data.csv");
+            DataArray data = new DataArray(@"C:\Users\josep\source\repos\Sorting Algorithms\Sorting Algorithms\Data\data.csv");
             data.displayArray();
 
-            SortAlogirthims sorter = new SortAlogirthims(); //Really want to make this static
+            SortAlgirthims sorter = new SortAlgirthims(); //Really want to make this static
 
             data.array = sorter.insertSort(data.array);
             data.displayArray();
         }
     }
 
-    class SortAlogirthims
+    class SortAlgirthims
     {
         public List<int> selectionSort(List<int> array)
         {
