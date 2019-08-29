@@ -10,12 +10,17 @@ namespace Sorting_Alogorithms
         {
             DataArray data = new DataArray(@"C:\Users\josep\source\repos\Sorting Alogorithms\Sorting Alogorithms\Data\data.csv");
             data.displayArray();
+
+            SortAlogirthims sorter = new SortAlogirthims(); //Really want to make this static
+
+            data.array = sorter.selectionSort(data.array);
+            data.displayArray();
         }
     }
 
     class SortAlogirthims
     {
-        public List<int> selectionSort(List<Int32> array)
+        public List<int> selectionSort(List<int> array)
         {
             int smallest;
             for (int i = 0; i < array.Count - 1; i++)
@@ -45,12 +50,12 @@ namespace Sorting_Alogorithms
 
     class DataArray
     {
-        private List<int> array;
+        public List<int> array;
 
-        public DataArray()
+        /*public DataArray()
         {
             //generateRandomData();  TODO create method
-        }
+        }*/
 
         public DataArray(string filePath)
         {
@@ -77,16 +82,6 @@ namespace Sorting_Alogorithms
             {
                 Console.WriteLine(line.ToString());
             }
-        }
-
-        public List<int> getDataArray()
-        {
-            return this.array;
-        }
-
-        public void setDataArray(List<int> array)
-        {
-            this.array = array;
         }
     }
 
